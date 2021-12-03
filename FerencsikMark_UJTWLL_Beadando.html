@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Formula 1</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+	<script src="jquery-3.6.0.js"></script>
+	<style>
+	table{
+		border: 2px solid black;
+	}
+	
+	th, td{
+		border: 1px solid black;
+		padding: 5px;
+	}
+	
+	#leftCol{
+		text-align: right;
+	}
+	
+	#center, .center{
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+	<h1 class="center" id="valtozo">Formula 1</h1>
+	<p id="elso">
+	A Formula-1 ("a motorsportok csúcsa") nyitott karosszériájú (open-wheel), együléses (single-seater) versenyautók
+	számára létesített nemzetközi versenysorozat, melyben 10 csapat összesen 20 pilótája mérkőzik meg egymással. A versenyek
+	(Grand Prix-k/nagydíjak) három szabadedzést, egy időmérő edzést, és egy versenyt foglal magában. A vasárnap rendezett
+	versenyen az elért helyezés alapján pontokat osztanak, mind a versenyzőknek, mind a csapataiknak. A szezon végén pedig
+	világbajnokot hirdetnek az egyéni és a csapatok közötti (konstruktőri) ponttáblázat alapján.
+	Jelen állásában a 2021-es Formula 1-es szezonnak két potenciális egyéni világbajnoka lehet:
+	</p>
+	<p>
+	<ul>
+	<li><strong><a href="https://hu.wikipedia.org/wiki/Lewis_Hamilton" id="valtozo44">Lewis Hamilton</a></strong>, 
+	aki a legendás Michael Schumacherrel egyenlő számú, azaz 7 világbajnoki címmel rendelkezik, többé-kevésbé dominálta a
+	hibrid érát, kellő tapasztalattal rendelkezik az F1-ben. Valamint</li>
+	<li><strong><a href="https://hu.wikipedia.org/wiki/Max_Verstappen" id="valtozo33">Max Verstappen</a></strong>,
+	aki egy feltörekvő fiatal tehetség, a pályafutásának kezdetén is nagy sikereket mutatott fel, mindemellett az idei
+	szezonra biztosítottak számára egy olyan autót, amellyel már a világbajnoki harcba is beleszólhat.</li>
+	</ul>
+	</p>
+	<p>
+	Néhány összefoglaló adat:
+	</p>
+	<p>
+	<table id="changeTable">
+		<tr>
+			<th id="leftCol"></th>
+			<th>Max Verstappen<br><img src="mv33.jpg" id="maxphoto" style="height: 200px"/></th>
+			<th>Lewis Hamilton<br><img src="lh44.jpg" id="lewisphoto" style="height: 200px"/></th>
+		</tr>
+		
+		<tr>
+			<td id="leftCol" class="paros">Születési év</td>
+			<td id="center" class="paros">1997</td>
+			<td id="center" class="paros">1985</td>
+		</tr>
+		<tr>
+			<td id="leftCol">Debütálás</td>
+			<td id="center">2015, Ausztrál Nagydíj</td>
+			<td id="center">2007, Ausztrál Nagydíj</td>
+		</tr>
+		<tr>
+			<td id="leftCol" class="paros">Nagydíjak</td>
+			<td id="center" class="paros">136</td>
+			<td id="center" class="paros">283</td>
+		</tr>
+		<tr>
+			<td id="leftCol">Győzelmek</td>
+			<td id="center">18</td>
+			<td id="center">100</td>
+		</tr>
+		<tr>
+			<td id="leftCol" class="paros">Pontverseny állása</td>
+			<td id="center" class="paros">287,5 pont <i><strong>(1.)</strong></i></td>
+			<td id="center" class="paros">275,5 pont <i><strong>(2.)</strong></i></td>
+		</tr>
+	</table>
+	</p>
+	<div>
+		<input type="button" id="letsgomax" value="Max a király!">
+		<input type="button" id="letsgolewis" value="Lewis a király!">
+	</div>
+	<div style="height: 30">
+		Amennyiben szeretnéd kifejteni a véleményed erről a témáról, kérlek, töltsd ki az alábbi űrlapot:
+	</div>
+	<p>
+	<input type="button" id="megj" value="Űrlap megjelenítése/elrejtése">
+	</p>
+	<div id="anim" style="display: none">
+		<form id="urlap">
+			<label for="vnev">Vezetéknév: </label>
+			<input type="text" id="vnev" name="vnev" pattern="[A-Z][a-z]{1,}" required><br>
+			<label for="knev">Keresztnév: </label>
+			<input type="text" id="knev" name="knev" pattern="[A-Z][a-z]{1,}" required><br>
+			<label for="nem">Nem: </label>
+			<input list="nem" name="nem" required>
+			<datalist id="nem">
+				<option>Férfi</option>
+				<option>Nő</option>
+				<option>Egyéb</option>
+			</datalist><br>
+			<label for="kor">Életkor: </label>
+			<input type="number" id="kor" name="kor" min="1" max="100" required><br>
+			<label for="email">E-mail cím: </label>
+			<input type="email" id="mail" name="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-z]{2,}" required><br>
+			<label for="szul">Születési dátum: </label>
+			<input type="date" id="szul" name="szul" max="2021-12-04" required><br>
+			<label for="lattam">Láttam már F1-es nagydíjat személyesen </label>
+			<input type="checkbox" id="lattam" name="lattam" value="igen"><br>
+			<fieldset>
+				<legend>Ki fogja nyerni az idei világbajnokságot?</legend>
+				<input type="radio" name="bajnok" id="lh44" value="lh44" onclick="change44()">
+				<label for="lh44" class="lh44">Lewis Hamilton</label><br>
+				<input type="radio" name="bajnok" id="mv33" value="mv33" onclick="change33()" checked>
+				<label for="mv33" class="mv33">Max Verstappen</label><br>
+			</fieldset>
+			<fieldset>
+				<legend>Ki(k) a kedvenc versenyző(i)d?</legend>
+				<label for="kedvencinput">Név: </label>
+				<input type="text" name="kedvencinput" id="kedvencinput">
+				<input type="button" value="Hozzáadás" onclick="hozzaad()"><br>
+				<label id="kedvenc">Kedvencek: </label><br>
+				<ul id="kedvenclista"></ul>
+			</fieldset>
+			<label for="megj">Megjegyzés: </label><br>
+			<textarea name="megj" id="megj" rows="10" cols="100"></textarea><br>
+			<input type="submit">
+		</form>
+	</div>
+	
+	<script>
+		$("#megj").click(function(){
+			$("#anim").slideToggle("slow");
+			$("#anim").classList.toggle("hidden");
+		});
+		
+		$("#letsgomax").click(function(){
+			$("#maxphoto").animate({height: "300px"});
+			$("#lewisphoto").animate({height: "200px"});
+		});
+		
+		$("#letsgolewis").click(function(){
+			$("#lewisphoto").animate({height: "300px"});
+			$("#maxphoto").animate({height: "200px"});
+		});
+	</script>
+	
+</body>
+</html>

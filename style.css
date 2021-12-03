@@ -1,0 +1,47 @@
+body{
+	background-color: lightgray;
+}
+
+div ul{
+	background-color: gray;
+}
+
+fieldset > ul{
+	border: black 1px solid;
+}
+
+input[type="text"]{
+	background-color: #b2c2a9;
+}
+
+#valtozo:hover{
+	font-style: italic;
+}
+
+#valtozo33{
+	color: blue;
+}
+
+#valtozo44{
+	color: darkcyan;
+}
+
+a:link{
+    background-color: lightyellow;
+}
+
+a:visited, input:required{
+    background-color: #f2eb68;
+}
+
+#elso::first-line{
+    font-style: italic;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+::selection{
+    color: rgba(255, 0, 0, 0);
+}
